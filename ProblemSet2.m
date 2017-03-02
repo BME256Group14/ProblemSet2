@@ -16,3 +16,5 @@ Omega = 8.38; %Hz
 InitPressure = 10; %mmHg
 PeakLVPressure = 120; %mmHg
 CPSqueezeVol = 50; %mL
+Pa=10 %mmHg
+t=0
