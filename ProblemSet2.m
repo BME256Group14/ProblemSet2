@@ -21,6 +21,4 @@ delta_t = 0.1;
 delta_p = 1; %mmHg
 Volume = ((i_out - (i_a1 + i_s1)) + (CPSqueezeVol/2)*Omega*sin(Omega*t + phi)* delta_t;
 C_wt = Volume / delta_p
-
-
-
+t=0 %sec
