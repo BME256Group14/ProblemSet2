@@ -24,8 +24,8 @@ InitPressure = 10; %mmHg
 PeakLVPressure = 120; %mmHg
 CPSqueezeVol = 50; %mL
 phi = 3.142/2;
-delta_t = 0.1;
-delta_p = 1; %mmHg
+dt = 0.1;
+dp = 1; %mmHg
 Iin = (Pv - Pp) / Rin
 Iout = (Pp - Pa1) / Rout
 Is1 = (Pa1 - Pv) / Rp1
@@ -33,17 +33,17 @@ Ia1 = (Pa1 - Pa2) / Ra1
 Is2 = (Pa2 - Pv) / Rp2
 Ia2 = (Pa2 - Pa3) / Ra2
 Is3 = (Pa3 - Pv) / Rp3
-Volume = ((Iout - (Ia1 + Is1)) + (CPSqueezeVol/2)*Omega*sin(Omega*t + phi)* delta_t;
-C_wt = Volume / delta_p
+Volume = ((Iout - (Ia1 + Is1)) + (CPSqueezeVol/2)*Omega*sin(Omega*t + phi)* dt;
+C_wt = Volume / dp
 
 dVv = ((Is1 + Is2 + Is3) - Iin) * dt
-dVp = (Iin - Iout) * Δt
+dVp = (Iin - Iout) * dt
 dVa1 = (Iout - (Ia1 + Is1)) * dt
 dVa2 = (Ia1 - (Ia2 + Is2)) * dt
 dVa3 = (Ia2 - Is3) * dt
 
-dPv = dVv / CV = ((( Is1 + Is2 + Is3) - Iin) * Δt) / Cv
-dPp = dVP / CP = ((Iin - Iout) * dt) / Cp
+dPv = dVv / Cv = ((( Is1 + Is2 + Is3) - Iin) * dt) / Cv
+dPp = dVp / Cp = ((Iin - Iout) * dt) / Cp
 dPa1 = dVa1 / Ca1 = ((Iout - (Ia1 + Is1)) * dt) / Ca1
 dPa2 = dVa2 / Ca2 = (( Ia1 - (Ia2 + Is2)) * dt) / Ca2
 dPa3 = dVa3 / Ca3 = ((Ia2 - Is3) * dt) / Ca3
